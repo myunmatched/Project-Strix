@@ -32,12 +32,6 @@
             background-color: #999;
             color: white;
         }
-        #message {
-            margin-top: 50px;
-            font-size: 28px;
-            color: #cc0066;
-            display: none;
-        }
     </style>
 </head>
 
@@ -48,11 +42,6 @@
 <button id="yesBtn" onclick="showLove()">Yes</button>
 <button id="noBtn" onmouseover="moveButton()">No</button>
 
-<div id="message">
-    You just made me the happiest person alive 🥰<br><br>
-    I love you more than words, code, and logic combined ❤️
-</div>
-
 <script>
     function moveButton() {
         var btn = document.getElementById("noBtn");
@@ -61,7 +50,7 @@
     }
 
     function showLove() {
-        document.getElementById("message").style.display = "block";
+        window.location.href = "love.html";
     }
 </script>
 
