@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>For You ❤️</title>
+    <style>
+        body {
+            background: #ffe6f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 120px;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 40px;
+            color: #ff3366;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            position: absolute;
+        }
+        #yesBtn {
+            left: 45%;
+            top: 55%;
+            background-color: #ff4d88;
+            color: white;
+        }
+        #noBtn {
+            background-color: #999;
+            color: white;
+        }
+        #message {
+            margin-top: 50px;
+            font-size: 28px;
+            color: #cc0066;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button id="yesBtn" onclick="showLove()">Yes</button>
+<button id="noBtn" onmouseover="moveButton()">No</button>
+
+<div id="message">
+    You just made me the happiest person alive 🥰<br><br>
+    I love you more than words, code, and logic combined ❤️
+</div>
+
+<script>
+    function moveButton() {
+        var btn = document.getElementById("noBtn");
+        btn.style.top = Math.random() * window.innerHeight + "px";
+        btn.style.left = Math.random() * window.innerWidth + "px";
+    }
+
+    function showLove() {
+        document.getElementById("message").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
