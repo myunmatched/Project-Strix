@@ -1,43 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>For You ❤️</title>
+    <title>For You Mamasita❤️</title>
+
     <style>
         body {
-            background: #ffe6f0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 120px;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: url('https://images.unsplash.com/photo-1518895949257-7621c3c786d7') no-repeat center center/cover;
+            height: 100vh;
             overflow: hidden;
         }
-        h1 {
-            font-size: 40px;
-            color: #ff3366;
+
+        .overlay {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: rgba(0,0,0,0.45);
         }
+
+        .card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            padding: 50px;
+            border-radius: 20px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 0 40px rgba(0,0,0,0.4);
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 40px;
+        }
+
         button {
-            padding: 15px 30px;
+            padding: 15px 35px;
             font-size: 20px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: none;
             cursor: pointer;
             position: absolute;
+            transition: 0.2s;
         }
+
         #yesBtn {
-            left: 45%;
-            top: 55%;
+            left: 42%;
+            top: 60%;
             background-color: #ff4d88;
             color: white;
         }
+
         #noBtn {
-            background-color: #999;
+            background-color: #777;
             color: white;
+        }
+
+        .heart {
+            position: absolute;
+            color: #ff4d88;
+            animation: float 6s infinite ease-in;
+            font-size: 20px;
+        }
+
+        @keyframes float {
+            from {transform: translateY(100vh);}
+            to {transform: translateY(-10vh);}
         }
     </style>
 </head>
 
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<div class="overlay"></div>
+
+<div class="card">
+    <h1>Will you be my Valentine? 💖</h1>
+</div>
 
 <button id="yesBtn" onclick="showLove()">Yes</button>
 <button id="noBtn" onmouseover="moveButton()">No</button>
@@ -52,6 +96,16 @@
     function showLove() {
         window.location.href = "love.html";
     }
+
+    // Floating hearts
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.innerHTML = "❤";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+    }, 300);
 </script>
 
 </body>
